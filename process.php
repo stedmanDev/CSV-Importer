@@ -6,6 +6,8 @@ require_once 'core/init.php';
 
 #var_dump($_FILES["employee_file"]["name"]); die;
 
+#die(json_encode([ 'success'=> true, 'error'=> false]));
+
 $file = new Validation;
 $file->check($_FILES["employee_file"]["name"]);
 $file->tempFile($_FILES["employee_file"]["tmp_name"]);

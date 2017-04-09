@@ -21,7 +21,7 @@ class Content {
 
 
     public function parse($checkedfile) {
-        #echo "<pre>";
+
         $this->_csvData = $checkedfile;
 
         $r = array_map('str_getcsv', file($this->_csvData));
