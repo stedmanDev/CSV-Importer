@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CSV Importer</title>
     <meta name="description" content="">
