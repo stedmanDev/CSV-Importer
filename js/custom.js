@@ -95,7 +95,7 @@ $(document).ready(function() {
                     $('.csvimporter__output').append(trHTML);
                     */
 
-                    $(".button__download--link").attr({
+                    $(".box__download--link").attr({
                         "href": csvData,
                         "download": "CSV-Export-" + theTime + "-" + csvFileName.slice(0, -1)
                     });

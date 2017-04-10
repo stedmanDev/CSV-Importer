@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"> 
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
@@ -30,12 +32,12 @@
 
                 <div class="masthead clearfix">
                     <div class="inner">
-                        <h3 class="masthead-brand">CSV Importer</h3>
+                        <!--<h3 class="masthead-brand">CSV Importer</h3>
                         <nav>
                             <ul class="nav masthead-nav">
                                 <li class="active"><a href="#">Home</a></li>
                             </ul>
-                        </nav>
+                        </nav>-->
                     </div>
                 </div>
 
