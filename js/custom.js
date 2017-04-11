@@ -123,17 +123,4 @@ $(document).ready(function() {
             });
         }
     });
-
-    // restart the form if has a state of error/success
-    $restart.on('click', function(e) {
-        e.preventDefault();
-        $form.removeClass('is-error is-success');
-        $input.trigger('click');
-    });
-
-    // Firefox focus bug fix for file input
-    $input
-        .on('focus', function() { $input.addClass('has-focus'); })
-        .on('blur', function() { $input.removeClass('has-focus'); });
-
 });

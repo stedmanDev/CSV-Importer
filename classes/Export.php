@@ -18,7 +18,7 @@ class Export {
 
     public function export($filename) {
 
-		$resultsDB = $this->_db->query("SELECT * from sheet_data WHERE active=1 ORDER BY firstname ASC");  
+		$resultsDB = $this->_db->query("SELECT * from sheet_data WHERE active=1 ORDER BY lastname ASC, firstname ASC");  
 		
 		if($resultsDB->count()) {
 			
@@ -26,11 +26,11 @@ class Export {
 			header("Content-Type: text/html; charset=UTF-8");
 
 			$output = fopen("php://output", "w") or die('Cannot open the file'); 
-			fputcsv($output, array('Vorname','Nachname','Schule','E-Mail','Anzahl','Anmeldung vom'),';','"'); 
+			fputcsv($output, array('Nachname','Vorname','Schule','E-Mail','Anzahl','Anmeldung vom'),';','"'); 
 			
 			foreach($resultsDB->results() as $resultCSV) {
-				fputcsv($output, array(	utf8_encode($resultCSV->firstname),
-										utf8_encode($resultCSV->lastname),
+				fputcsv($output, array(	utf8_encode($resultCSV->lastname),
+										utf8_encode($resultCSV->firstname),
 										utf8_encode($resultCSV->school),
 										$resultCSV->email,
 										$resultCSV->subscriber,
