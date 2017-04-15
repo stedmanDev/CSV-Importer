@@ -11,7 +11,8 @@ class Content {
             $_parsedData,
             $_splitData,
             $_csvArray,
-            $_vfirstname;
+            $_vfirstname,
+            $_csvDuplicates;
 
 
     public function __construct() {
@@ -47,41 +48,44 @@ class Content {
     public function test($tmp) {
 
         $validateContent = new Validation();
-
-        #echo "<pre>";
-        #print_r($tmp);
+        $sanitizeContent = new Sanitize();
 
         $index = 0;
-        $testarry = array();
+        $prepareDataArray = array();
         while(array_key_exists($index, $tmp)) {
             
             $this->_splitData = implode(';',$tmp[$index]);
-            array_push($testarry, $this->_splitData);
+            array_push($prepareDataArray, $this->_splitData);
             $index++;
         } 
  
-        $testarry = array_unique($testarry); 
+        $prepareDataArray = array_unique($prepareDataArray); 
 
+        $duplicatesNameArray = array();
+        $duplicatesFamilyArray = array();
 
-
-        foreach($testarry as $k=>$v)
+        foreach($prepareDataArray as $k=>$v)
         {
             list($name,$family) = explode(';', $v);
             if( isset($temp[$name.$family]) ) {
-                unset($testarry[$k]);
+                array_push($duplicatesNameArray,$sanitizeContent->escape($name));
+                array_push($duplicatesFamilyArray,$sanitizeContent->escape($family));
+                unset($prepareDataArray[$k]);
             } else {
                 $temp[$name.$family] = true;
             }
         }
 
-        $tarray = array_values($testarry);
+        if(!empty($duplicatesNameArray)) {
+            $this->_csvDuplicates = array_combine($duplicatesNameArray,$duplicatesFamilyArray);
+        }else {
+            $this->_csvDuplicates = 'empty';
+        }
 
-        #print_r( $testarry); die;
+        $tarray = array_values($prepareDataArray);
 
         $test = (count(array_keys($tarray)));
     
-        #print_r( $tarray);
-
         $csvFields = new Import();
         $csvFields->prepare();
 
@@ -96,7 +100,9 @@ class Content {
         return $this->_csvData;
     }
 
-
+    public function duplicates() {
+        return $this->_csvDuplicates;
+    }
 
 }
 

@@ -18,9 +18,10 @@ if($file->passedFile()) {
     $content->parse($file->outputTmpFile());
 
     $filename = $file->getFilename();
+    $duplicates = $content->duplicates();
 
-    $test = new Export();
-    $test->export($filename);
+    $exportFile = new Export();
+    $exportFile->export($filename,$duplicates);
 
 
 } else {

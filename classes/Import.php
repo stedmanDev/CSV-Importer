@@ -23,9 +23,6 @@ class Import {
 
     public function create($fields = array()) {
         
-		#echo "<pre>";  
-		#print_r($fields);
-
 		if(count($fields)) {
 			$keys = array_keys($fields);
 			$sql= "`".implode('`, `', $keys)."`";	
