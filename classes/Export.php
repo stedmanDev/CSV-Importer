@@ -74,6 +74,7 @@ class Export {
 
 	public function setEventTitle($title) {
 		$title = str_replace('KinderUni___','', $title);
+		$title = str_replace('KinderUni_','', $title);
 		$title = str_replace('__',' - ', $title);
 		$title = str_replace('_',' ', $title);
 		$title = str_replace('.csv','', $title);
