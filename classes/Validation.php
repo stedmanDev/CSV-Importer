@@ -79,7 +79,7 @@ class Validation {
 			$this->_validatedFirstname = $escapeFields->escape($this->_fileContentArray[0]);
 			$this->_validatedLastname =  $escapeFields->escape($this->_fileContentArray[1]);
 			$this->_validatedSchool =  $escapeFields->escape($this->_fileContentArray[2]);
-			$this->_validatedEmail = filter_var(trim($this->_fileContentArray[3],FILTER_SANITIZE_EMAIL));
+			$this->_validatedEmail = strtolower(filter_var(trim($this->_fileContentArray[3],FILTER_SANITIZE_EMAIL)));
 			$this->_validatedSubscriber = filter_var($this->_fileContentArray[4],FILTER_SANITIZE_NUMBER_INT);
 			$this->_validatedRegistration = $escapeFields->escape($this->_fileContentArray[5]);
 
