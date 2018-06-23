@@ -47,4 +47,5 @@ Temporary Items
 .apdisk
 core/init.php
 sheet_data.sql
-backup/*
+backup
+node_modules
