@@ -47,4 +47,4 @@ Temporary Items
 .apdisk
 core/init.php
 sheet_data.sql
-backup/core/init.php
+backup/*

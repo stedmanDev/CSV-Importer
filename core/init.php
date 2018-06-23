@@ -10,10 +10,10 @@
  */
 $GLOBALS['config'] = array(
 	'mysql'=> array(
-		'host' => '127.0.0.1',
-		'username' => 'root',
-		'password' => '',
-		'db' => 'csv_import'
+		'host' => 'localhost',
+		'username' => 'web89_2',
+		'password' => 'X8&urjmZCBd7HS2r',
+		'db' => 'web89_db2'
 	)
 );
 	
