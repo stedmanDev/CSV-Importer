@@ -11,9 +11,9 @@
 $GLOBALS['config'] = array(
 	'mysql'=> array(
 		'host' => 'localhost',
-		'username' => 'web89_2',
-		'password' => 'X8&urjmZCBd7HS2r',
-		'db' => 'web89_db2'
+		'username' => 'root',
+		'password' => 'root',
+		'db' => 'kinderuni'
 	)
 );
 	
@@ -24,6 +24,3 @@ $GLOBALS['config'] = array(
 spl_autoload_register(function($class) {
 	require_once 'classes/'	. $class . '.php';
 });
-
-
-?>
